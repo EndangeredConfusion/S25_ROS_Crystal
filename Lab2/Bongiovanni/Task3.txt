@@ -1,0 +1,5 @@
+For Task 3, first I changed the color of the line to black using: ros2 service call /turtle1/set_pen turtlesim/srv/SetPen "{'r': 0, 'g': 0, 'b': 0, 'width': 2, 'off': 0}"
+
+Then I used: ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: X}" and ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+
+The first time I rotated the turtle was to get it to face down at 4.71 rads. Then I kept switiching between drawing and rotating the turtle 90 degrees, until the square was drawn.
