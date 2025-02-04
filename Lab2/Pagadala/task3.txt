@@ -1,0 +1,6 @@
+Used following service call to turn the turtle line black:
+
+ros2 service call /turtle1/set_pen turtlesim/srv/SetPen "{'r': 0, 'g': 0, 'b': 0, 'width': 2, 'off': 0}"
+
+Then used GBVCDERT and arrow keys to move the turtle to form a square.
+

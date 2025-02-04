@@ -1,0 +1,33 @@
+Task 3 involves using one of multiple ways to draw a black square using turtlesim.
+One such procedure is described below.
+
+One of the easiest ways to accomplish this is to use the keyboard inputs, provided by
+ the turtle_teleop_key node as normal.
+
+Upon starting up turtlesim_node with the turtle at the center of the window, the
+ turtle_teleop_key can be run to initiate keyboard inputs for the turtle. In addition
+ to the directional arrow keys that control forwards and backward movement and arbitrary
+ left and right rotations, the alphaneumerical keys that surround F can be used to make more
+ precise rotations.
+
+Before movement can be made, the path made by the turtle must change. To change the color of
+ the line drawn by the turtle, the command:
+
+	ros2 service call /turtle1/set_pen turtlesim/srv/SetPen "{width: 5}"
+
+ ...can be called. This means the service SetPen is being called and manually altered using
+ the YAML data format. Because no colors are being set with this call, and only width is
+ (just to make the box appear clearer on the blue background of turtlesim), turtlesim
+ defaults to coloring the path to Black
+
+Drawing the square using the turtle_teleop_key node follows this sequence:
+  1. Turn left using D
+  2. Move forward
+  3. Turn down using V
+  4. Move forward
+  5. Turn right using G
+  6. Move forward
+  7. Turn up using R
+  8. Move forward
+
+The black square should be drawn
