@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtle_interfaces/srv/Setpose.srv
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/PoseStamped.idl"
+
+module turtle_interfaces {
+  module srv {
+    struct Setpose_Request {
+      geometry_msgs::msg::PoseStamped turtle_pose;
+    };
+    struct Setpose_Response {
+      int8 ret;
+    };
+  };
+};
