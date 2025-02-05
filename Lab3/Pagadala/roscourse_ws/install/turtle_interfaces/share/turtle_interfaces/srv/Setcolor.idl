@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from turtle_interfaces/srv/Setcolor.srv
+// generated code does not contain a copyright notice
+
+
+module turtle_interfaces {
+  module srv {
+    struct Setcolor_Request {
+      string color;
+    };
+    struct Setcolor_Response {
+      int8 ret;
+    };
+  };
+};
