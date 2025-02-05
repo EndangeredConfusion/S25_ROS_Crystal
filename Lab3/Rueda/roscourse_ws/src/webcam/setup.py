@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        	'webcam_pub = webcam.cam_pub:main',
+        	'webcam_sub = webcam.cam_sub:main'
         ],
     },
 )
