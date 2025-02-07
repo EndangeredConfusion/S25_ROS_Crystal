@@ -1,0 +1,6 @@
+In order to draw the square I wrote a simple bash script to endlessly repeat the turning and moving forward commands like the following: 
+ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist “{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}”
+ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist “{linear: {x:2 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: pi/2}}”
+(with pi/2 in decimal form of course).
+
+I used lots of SF for the pi/2 value to keep the square as veritable as possible, and it turned out alright.
