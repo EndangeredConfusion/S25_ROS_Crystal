@@ -52,7 +52,7 @@ _colcon_prepend_unique_value() {
 # since a plain shell script can't determine its own path when being sourced
 # either use the provided COLCON_CURRENT_PREFIX
 # or fall back to the build time prefix (if it exists)
-_colcon_package_sh_COLCON_CURRENT_PREFIX="/home/yahboom/S25_ROS_Crystal/Lab3/Pagadala/roscourse_ws/install/turtle_interfaces"
+_colcon_package_sh_COLCON_CURRENT_PREFIX="/home/yahboom/S25_ROS_Crystal/Lab3/Pagadala/roscourse_ws/install/python_turtle"
 if [ -z "$COLCON_CURRENT_PREFIX" ]; then
   if [ ! -d "$_colcon_package_sh_COLCON_CURRENT_PREFIX" ]; then
     echo "The build time path \"$_colcon_package_sh_COLCON_CURRENT_PREFIX\" doesn't exist. Either source a script for a different shell or set the environment variable \"COLCON_CURRENT_PREFIX\" explicitly." 1>&2
@@ -78,10 +78,8 @@ _colcon_package_sh_source_script() {
 }
 
 # source sh hooks
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/turtle_interfaces/hook/cmake_prefix_path.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/turtle_interfaces/hook/ld_library_path_lib.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/turtle_interfaces/hook/pythonpath.sh"
-_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/turtle_interfaces/local_setup.sh"
+_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/python_turtle/hook/pythonpath.sh"
+_colcon_package_sh_source_script "$COLCON_CURRENT_PREFIX/share/python_turtle/hook/ament_prefix_path.sh"
 
 unset _colcon_package_sh_source_script
 unset COLCON_CURRENT_PREFIX
