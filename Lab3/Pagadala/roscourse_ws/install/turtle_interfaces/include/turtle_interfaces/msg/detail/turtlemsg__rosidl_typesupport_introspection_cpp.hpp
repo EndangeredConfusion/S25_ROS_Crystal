@@ -1,0 +1,1 @@
+/home/yahboom/S25_ROS_Crystal/Lab3/Pagadala/roscourse_ws/build/turtle_interfaces/rosidl_typesupport_introspection_cpp/turtle_interfaces/msg/detail/turtlemsg__rosidl_typesupport_introspection_cpp.hpp

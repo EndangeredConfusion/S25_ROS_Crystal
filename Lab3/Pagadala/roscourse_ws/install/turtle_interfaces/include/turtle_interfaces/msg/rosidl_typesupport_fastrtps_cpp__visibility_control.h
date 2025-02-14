@@ -1,0 +1,1 @@
+/home/yahboom/S25_ROS_Crystal/Lab3/Pagadala/roscourse_ws/build/turtle_interfaces/rosidl_typesupport_fastrtps_cpp/turtle_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
