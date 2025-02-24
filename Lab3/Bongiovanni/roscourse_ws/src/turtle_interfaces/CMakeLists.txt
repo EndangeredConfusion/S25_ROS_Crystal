@@ -38,6 +38,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
  "msg/TurtleMsg.msg"
  "srv/SetPose.srv"
  "srv/SetColor.srv"
+ "action/TurtleToGoals.action"
  DEPENDENCIES geometry_msgs)
 
 ament_package()

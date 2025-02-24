@@ -7,6 +7,8 @@ from geometry_msgs.msg import Twist, Pose
 
 from turtle_interfaces.srv import SetColor
 from turtle_interfaces.msg import TurtleMsg
+from rclpy.action import ActionServer
+from Turtle_interfaces.action import TurtleToGoals
 
 class TurtlebotServer(Node):
     def __init__(self):
@@ -31,9 +33,29 @@ class TurtlebotServer(Node):
         self.sim_interval = 0.02
         self.create_timer(self.sim_interval, self.driving_timer_cb)
         
+        ## Color of turtle line ##
         self.turtle_color_srv = self.create_service(SetColor, 'setColor', self.set_color_callback)
+        
+        ## Set up of action server ##
+        self.action_server = ActionServer(self, TurtleToGoals, 'go_to_goals', self.travel_to_goals_cb)
 
 
+    def travel_to_goals_cb(self, goal_handle):
+    	self.get_logger().info('To goals')
+    	self.vel_x = 0
+    	self.angle_vel = 0
+    	feedback_msg = TurtleToGoals.Feedback()
+    	for goal in goal_handle.request.goal_pose:
+    		feedback_msg.mid_goal_pose = goal
+    		goal_handle.publish_feedback(feedback_msg)
+    		self.turtle.turtle_pose = goal
+    		self.turtle_pub.publish(self.turtle)
+    		time.sleep(2) # this is the end of the loop
+    	goal_handle.succeed()
+    	result = TurtleToGoals.Result()
+    	result.ret = 1
+    	return result
+    	
     def set_color_callback(self, request, response):
     	self.turtle.color = request.color
     	self.get_logger().info('Turtle color set: %s' % (self.turtle.color))
