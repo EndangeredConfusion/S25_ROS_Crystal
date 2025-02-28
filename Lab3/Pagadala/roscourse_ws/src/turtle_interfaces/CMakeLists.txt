@@ -34,7 +34,7 @@ endif()
 
 find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
-rosidl_generate_interfaces(${PROJECT_NAME} "msg/Turtlemsg.msg" "srv/Setpose.srv" "srv/Setcolor.srv" "action/TurtleToGoals.action" DEPENDENCIES geometry_msgs )
+rosidl_generate_interfaces(${PROJECT_NAME} "msg/Turtlemsg.msg" "srv/Setpose.srv" "srv/SetColor.srv" "action/TurtleToGoals.action" DEPENDENCIES geometry_msgs )
 
 ament_export_dependencies(rosidl_default_runtime)
 

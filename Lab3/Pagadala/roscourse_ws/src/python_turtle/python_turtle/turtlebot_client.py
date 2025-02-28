@@ -7,8 +7,10 @@ import turtle
 
 from geometry_msgs.msg import Twist, Pose
 
-from turtle_interfaces.srv import Setcolor
+from turtle_interfaces.srv import SetColor
 from turtle_interfaces.msg import Turtlemsg
+from rclpy.parameter import Parameter
+from rcl_interfaces.msg import ParameterDescriptor
 
 class TurtleClient(Node):
     def __init__(self):
@@ -27,6 +29,29 @@ class TurtleClient(Node):
 
         #### subscribing turtlebot state ####
         self.turtle_sub = self.create_subscription(Turtlemsg, 'turtleState', self.turtle_callback, 1)
+        
+        ## Lab 4
+        
+        ## setting color
+        
+        self.declare_parameter('turtleColor', 'red', ParameterDescriptor(description= 'default turtle color'))
+        turtleColor = self.get_parameter('turtleColor').get_parameter_value().string_value
+        self.turtle_display.color(turtleColor)
+        
+        self.color_cli = self.create_client(SetColor,'SetColor')
+        while not self.color_cli.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('Color service not available, waiting...')
+        self.color_req = SetColor.Request()
+        self.color_req.color = turtleColor
+        self.server_call = True
+        self.service_future = self.color_cli.call_async(self.color_req)
+        #Don't forget the import needed for this service. Hint: see service_client.py
+        
+        ## setting pen thickness
+        
+        self.declare_parameter('penThickness', 5, ParameterDescriptor(description= 'default pen thickness'))
+        penThickness = self.get_parameter('penThickness').get_parameter_value().integer_value
+        self.turtle_display.pensize(penThickness)
 
     def turtle_callback(self, msg):
 
@@ -102,7 +127,7 @@ def main(args=None):
         cmd_msg = Twist()
         cmd_msg.linear.x = float(50 * unit_x)
         cmd_msg.angular.z = float(1 * unit_z)
-        cli_obj.twist_pub.publish(cmd_msg)
+        #cli_obj.twist_pub.publish(cmd_msg)
 
     # Destory the node explicitly
     cli_obj.destroy_node()
