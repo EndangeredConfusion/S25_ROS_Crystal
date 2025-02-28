@@ -14,6 +14,7 @@
   
   <exec_depend>rclpy</exec_depend>
   <exec_depend>turtle_interfaces</exec_depend>
+  <exec_depend>rcl_interfaces</exec_depend>
 
   <export>
     <build_type>ament_python</build_type>

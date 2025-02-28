@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist, Pose
 from rclpy.action import ActionServer
 from turtle_interfaces.action import TurtleToGoals
 
-from turtle_interfaces.srv import Setcolor
+from turtle_interfaces.srv import SetColor
 from turtle_interfaces.msg import Turtlemsg
 
 class TurtlebotServer(Node):
@@ -34,7 +34,7 @@ class TurtlebotServer(Node):
         self.sim_interval = 0.02
         self.create_timer(self.sim_interval, self.driving_timer_cb)
         
-        self.turtle_color_srv = self.create_service(Setcolor, 'setColor', self.set_color_callback)
+        self.turtle_color_srv = self.create_service(SetColor, 'SetColor', self.set_color_callback)
         
         self.action_server = ActionServer(self, TurtleToGoals, 'go_to_goals',self.travel_to_goals_cb)
         
