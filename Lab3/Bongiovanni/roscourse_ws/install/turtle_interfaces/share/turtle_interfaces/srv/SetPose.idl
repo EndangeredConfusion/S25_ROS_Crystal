@@ -1,16 +1,1 @@
-// generated from rosidl_adapter/resource/srv.idl.em
-// with input from turtle_interfaces/srv/SetPose.srv
-// generated code does not contain a copyright notice
-
-#include "geometry_msgs/msg/PoseStamped.idl"
-
-module turtle_interfaces {
-  module srv {
-    struct SetPose_Request {
-      geometry_msgs::msg::PoseStamped turtle_pose;
-    };
-    struct SetPose_Response {
-      int8 ret;
-    };
-  };
-};
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/build/turtle_interfaces/rosidl_adapter/turtle_interfaces/srv/SetPose.idl

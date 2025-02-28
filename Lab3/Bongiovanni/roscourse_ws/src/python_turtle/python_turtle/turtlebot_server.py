@@ -8,7 +8,7 @@ from geometry_msgs.msg import Twist, Pose
 from turtle_interfaces.srv import SetColor
 from turtle_interfaces.msg import TurtleMsg
 from rclpy.action import ActionServer
-from Turtle_interfaces.action import TurtleToGoals
+from turtle_interfaces.action import TurtleToGoals
 
 class TurtlebotServer(Node):
     def __init__(self):

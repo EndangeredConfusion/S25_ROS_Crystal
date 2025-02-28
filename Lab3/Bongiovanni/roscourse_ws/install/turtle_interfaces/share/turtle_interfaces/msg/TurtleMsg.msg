@@ -1,3 +1,1 @@
-string name
-geometry_msgs/Pose turtle_pose
-string color
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/src/turtle_interfaces/msg/TurtleMsg.msg

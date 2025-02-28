@@ -1,12 +1,1 @@
-action/TurtleToGoals.action
-action/TurtleToGoals.idl
-msg/TurtleMsg.idl
-msg/TurtleMsg.msg
-srv/SetColor.idl
-srv/SetColor.srv
-srv/SetColor_Request.msg
-srv/SetColor_Response.msg
-srv/SetPose.idl
-srv/SetPose.srv
-srv/SetPose_Request.msg
-srv/SetPose_Response.msg
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/build/turtle_interfaces/ament_cmake_index/share/ament_index/resource_index/rosidl_interfaces/turtle_interfaces

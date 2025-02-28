@@ -1,5 +1,1 @@
-geometry_msgs/Pose[] goal_poses
----
-int32 ret
----
-geometry_msgs/Pose mid_goal_pose
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/src/turtle_interfaces/action/TurtleToGoals.action

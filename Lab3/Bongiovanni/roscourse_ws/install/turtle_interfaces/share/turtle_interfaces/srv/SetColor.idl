@@ -1,15 +1,1 @@
-// generated from rosidl_adapter/resource/srv.idl.em
-// with input from turtle_interfaces/srv/SetColor.srv
-// generated code does not contain a copyright notice
-
-
-module turtle_interfaces {
-  module srv {
-    struct SetColor_Request {
-      string color;
-    };
-    struct SetColor_Response {
-      int8 ret;
-    };
-  };
-};
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/build/turtle_interfaces/rosidl_adapter/turtle_interfaces/srv/SetColor.idl

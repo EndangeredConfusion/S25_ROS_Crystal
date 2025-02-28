@@ -1,11 +1,1 @@
-// generated from rosidl_generator_cpp/resource/idl.hpp.em
-// generated code does not contain a copyright notice
-
-#ifndef TURTLE_INTERFACES__ACTION__TURTLE_TO_GOALS_HPP_
-#define TURTLE_INTERFACES__ACTION__TURTLE_TO_GOALS_HPP_
-
-#include "turtle_interfaces/action/detail/turtle_to_goals__struct.hpp"
-#include "turtle_interfaces/action/detail/turtle_to_goals__builder.hpp"
-#include "turtle_interfaces/action/detail/turtle_to_goals__traits.hpp"
-
-#endif  // TURTLE_INTERFACES__ACTION__TURTLE_TO_GOALS_HPP_
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/build/turtle_interfaces/rosidl_generator_cpp/turtle_interfaces/action/turtle_to_goals.hpp

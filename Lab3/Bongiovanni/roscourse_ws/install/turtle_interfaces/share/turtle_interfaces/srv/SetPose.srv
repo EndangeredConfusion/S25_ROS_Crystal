@@ -1,3 +1,1 @@
-geometry_msgs/PoseStamped turtle_pose
----
-int8 ret
+/home/yahboom/Desktop/S25_ROS_Crystal/Lab3/Bongiovanni/roscourse_ws/src/turtle_interfaces/srv/SetPose.srv
