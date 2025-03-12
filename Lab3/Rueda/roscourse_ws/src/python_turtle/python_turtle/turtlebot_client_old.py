@@ -10,12 +10,6 @@ from geometry_msgs.msg import Twist, Pose
 from turtle_interfaces.srv import SetColor
 from turtle_interfaces.msg import TurtleMsg
 
-from rclpy.parameter import Parameter
-from rcl_interfaces.msg import ParameterDescriptor
-# EDIT, 2/25, 12:49PM -- added two imports shown above
-# REASON: Needed for new parameter service
-
-
 class TurtleClient(Node):
     def __init__(self):
         super().__init__('turtleClient')
@@ -26,22 +20,6 @@ class TurtleClient(Node):
         self.turtle_display = turtle.Turtle()
         self.turtle_display.shape("turtle")
         self.turtle = TurtleMsg()
-        
-        self.declare_parameter('turtleColor', 'red', ParameterDescriptor(description= 'What color the turtle should be'))
-        turtleColor = self.get_parameter('turtleColor').get_parameter_value().string_value
-        self.turtle_display.color(turtleColor)
-        # EDIT, 2/25, 1:00PM -- added three lines shown above
-        # REASON: adding a parameter to initialize the color of the turtle when the node starts up
-        
-        self.color_cli = self.create_client(SetColor,'setColor')
-        while not self.color_cli.wait_for_service(timeout_sec=1.0):
-        	self.get_logger().info('Color service not available, waiting...')
-        self.color_req = SetColor.Request()
-        self.color_req.color = turtleColor
-        self.server_call = True
-        self.service_future = self.color_cli.call_async(self.color_req)
-        # EDIT, 2/25, 1:30PM -- added seven lines shown above
-        # REASON: calling the setColor service in client initialization, making sure the server has the desired field for the color
 
         #### publisher define ####
         self.twist_pub = self.create_publisher(Twist, 'turtleDrive', 1)
@@ -124,9 +102,7 @@ def main(args=None):
         cmd_msg = Twist()
         cmd_msg.linear.x = float(50 * unit_x)
         cmd_msg.angular.z = float(1 * unit_z)
-        #cli_obj.twist_pub.publish(cmd_msg)
-        # EDIT, 2/25, 12:20PM -- commented out the line above
-        # REASON: now wanting the teleop_twist_key package to directly control the turtle; cmd_msg not relevant
+        cli_obj.twist_pub.publish(cmd_msg)
 
     # Destory the node explicitly
     cli_obj.destroy_node()

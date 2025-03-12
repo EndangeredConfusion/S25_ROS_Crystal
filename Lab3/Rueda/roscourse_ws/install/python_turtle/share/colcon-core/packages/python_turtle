@@ -1,1 +1,1 @@
-geometry_msgs:rclpy:rosidl_default_runtime:sensor_msgs
+geometry_msgs:rcl_interfaces:rclpy:rosidl_default_runtime:sensor_msgs
